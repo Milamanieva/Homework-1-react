@@ -22,7 +22,7 @@ render() {
     return (
     <div> 
     <input type="text" value="" onChange={this.handleChange}/>
-    <button className="btn btn-primary" onClick={() => this.addTodo(this.state.value)}>Submit</button>
+    <button className="addTodo" onClick={() => this.addTodo(this.state.value)}>Add</button>
     </div>
     );
  }

@@ -1,4 +1,39 @@
-.App {
+  .App {
+	display: inline;
+	position: relative;
+	font: 50px Helvetica, Sans-Serif;
+	letter-spacing: -5px;
+    color: rgba(0,0,255,0.5); 
     text-align: center;
-    color: red;
 }
+
+  
+  .removeTodo {
+        color: white;
+        padding: 6px 16px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 8x;
+        border-radius: 60px;
+        background:4px solid #226fbe;
+        background-color: #9e9392;
+    
+    }
+
+  .todo-wrapper {
+    margin: 20px auto 20px auto;
+    width: 500px;
+    min-height: 600px;
+    border: 5px solid #9e9392;
+    padding: 20px;
+  }
+
+  .addTodo {
+      color:rgba(0,0,255,0.5);
+      font:Helvetica, Sans-Serif;
+  }
+
+  .completed {
+      text-decoration: line-through;
+  }

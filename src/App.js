@@ -1,22 +1,19 @@
 import React, {Component } from 'react';
 import ReactDOM from 'react-dom';
 import Header from './header';
-import TodoInput from './todoInput';
-import TodoItem from './todoItem';
-import './index.css';
+import TodoInput from './todoInput'
+import TodoItem from './todoItem'
 
 const root = document.getElementById("root");
-
-
 
 class App extends Component {
     constructor(props) {
       super(props);
       this.state = {
         todos: [
-          {id: 0, text: "Get out of bed" completed ={true}},
-          {id: 1, text: "Brush teeth"completed ={false}},
-          {id: 2, text: "Eat breakfast" completed ={false}}
+          {id: 0, text: "Get out of bed, Wed Sep 13 2017"},
+          {id: 1, text: "Brush teeth,Thu Sep 14 2017"},
+          {id: 2, text: "Eat breakfast,Fri Sep 15 2017"}
         ],
         nextId: 3
       };
@@ -33,14 +30,14 @@ class App extends Component {
   
     removeTodo(id) {
       this.setState({
-          todos: this.state.todos.filter((todo,index) => todo.id !== id)
+          todos: this.state.todos.filter((todo, index) => todo.id !== id)
         });
     }
   
     render() {
       return (
-        <div className="App">
-          <div className="todo-wrapper">
+        <div classname="App">
+          <div classname="todo-wrapper">
             <Header />
             <TodoInput todoText="" addTodo={this.addTodo} />
             <ul>
