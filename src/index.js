@@ -14,21 +14,28 @@ class App extends Component {
       super(props);
       this.state = {
         todos: [
-          {id: 0, text: "Get out of bed" completed ={true}},
-          {id: 1, text: "Brush teeth"completed ={false}},
-          {id: 2, text: "Eat breakfast" completed ={false}}
+          {id: 0, text: "Get out of bed","done":true},
+          {id: 1, text: "Brush teeth", "done":false},
+          {id: 2, text: "Eat breakfast","done":false}
         ],
         nextId: 3
       };
   
+
       this.addTodo = this.addTodo.bind(this);
       this.removeTodo = this.removeTodo.bind(this);
     }
 
 
-    addTodo(){
-
+    addTodo(todoText) {
+      let todos = this.state.todos.slice();
+      todos.push({id: this.state.nextId, text: todoText});
+      this.setState({
+        todos: todos,
+        nextId: ++this.state.nextId
+      });
     }
+    
   
   
     removeTodo(id) {
