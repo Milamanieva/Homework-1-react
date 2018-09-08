@@ -24,6 +24,7 @@ class App extends Component {
 
       this.addTodo = this.addTodo.bind(this);
       this.removeTodo = this.removeTodo.bind(this);
+      this.changeStatus = this.changeStatus.bind(this);
     }
 
 
@@ -36,7 +37,16 @@ class App extends Component {
       });
     }
     
-  
+    changeStatus(todoId) {
+      const newItems = this.state.todos.map((todo) => {
+        if (todo.id !== todoId) return todo;
+        else {
+          todo.done = !todo.done;
+          return todo;
+        }
+      });
+      this.setState({ todos: newItems })
+    }
   
     removeTodo(id) {
       this.setState({

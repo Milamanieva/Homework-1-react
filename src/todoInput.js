@@ -8,7 +8,23 @@ export default class TodoInput extends React.Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.addTodo= this.addTodo.bind(this);
+    this.changeStatus = this.changeStatus.bind(this);
  }
+
+ changeStatus(todoId) {
+  //console.log(`todo id : ${todoId}`);
+  const newItems = this.state.items.map((todo) => {
+    if (todo.id !== todoId) return todo;
+    else {
+      todo.done = !todo.done;
+      return todo;
+    }
+  });
+  this.setState({ items: newItems })
+  }
+
+
+
 
  handleChange(e) {
     this.setState({value: e.target.value});
