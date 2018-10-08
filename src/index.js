@@ -53,7 +53,14 @@ class App extends Component {
           todos: this.state.todos.filter((todo,index) => todo.id !== id)
         });
     }
-  
+    
+    changeStatus(id) {
+      console.log (id);
+    }
+
+
+
+
     render() {
       return (
         <div className="App">
@@ -63,8 +70,14 @@ class App extends Component {
             <ul>
               {
                 this.state.todos.map((todo) => {
-                  return <TodoItem todo={todo} key={todo.id} id={todo.id} removeTodo={this.removeTodo}/>
-                })
+                  return (
+                  <TodoItem 
+                  todo={todo}
+                  key={todo.id} 
+                  id={todo.id} 
+                  changeStatus={this.changeStatus} 
+                  removeTodo={this.removeTodo}/>
+                )})
               }
             </ul>
           </div>

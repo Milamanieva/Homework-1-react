@@ -15,16 +15,18 @@ export default class TodoItem extends React.Component {
     }
 
     render() {
+        const checkedClass = this.props.todo.done ? 'done' : "";
+        console.log (this.props.todo.done, checkedClass);
         return (
             <div className="todoWrapper">
             <input
               type="checkbox"
               onChange={() => {
-              props.changeStatus(props.id);
+                this.props.changeStatus(this.props.id);
               }}
-              checked={props.done}
+              checked={this.props.todo.done}
             />
-            {this.props.todo.text} <button className="removeTodo" onClick={(e)=> this.removeTodo(this.props.id)}>remove</button> 
+            <span className={checkedClass} >{this.props.todo.text}</span> <button className="removeTodo" onClick={(e)=> this.removeTodo(this.props.id)}>remove</button> 
             </div>
         )
     }
